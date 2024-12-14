@@ -27,36 +27,7 @@ const Contract = () => {
     }
   };
 
-  const buttonStyles = {
-    circleButton: {
-      minWidth: "35px",
-      width: "35px",
-      height: "35px",
-      borderRadius: "50%",
-      border: "1px solid #8462FF",
-      padding: 0,
-      background: "transparent",
-      color: "#fff",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      "&:hover": {
-        background: "rgba(132, 98, 255, 0.1)",
-        border: "1px solid #8462FF",
-      },
-    },
-    circleButtonWithGradient: {
-      minWidth: "35px",
-      width: "35px",
-      height: "35px",
-      borderRadius: "50%",
-      background: "linear-gradient(180deg,#fff,#999)",
-      color: "#000",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-  };
+  
   const tableData = Array.from({length: 25}, (_, index) => ({
     id: index + 1,
     draftName: `Draft Template ${index + 1}`,
@@ -93,26 +64,11 @@ const Contract = () => {
       <div className="container-wrapper">
         <div className="child-container position-relative scroll_autin">
           <div
-            style={{
-              border: "2px dashed #ffffff3b",
-              borderRadius: "10px",
-
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "10px",
-              height: "100%",
-              cursor: "pointer",
-              transition: "border-color 0.3s ease",
-              "&:hover": {
-                borderColor: "#fff",
-              },
-            }}
+            className="upload_border"
           >
             {/* <CloudUploadIcon sx={{ fontSize: 40, color: '#fff' }} /> */}
-            <FileText size={40} color="#fff" />
-            <Typography sx={{color: "#fff"}}>
+            <FileText size={40} color="#fff" className="icon_color"/>
+            <Typography className="icon_color">
               Generate template to see preview
             </Typography>
           </div>
@@ -121,39 +77,14 @@ const Contract = () => {
               <Button
                 variant="contained"
                 onClick={handleBack}
-                sx={{
-                  background: "transparent",
-                  border: "1px solid #8462FF",
-                  width: "fit-content",
-                  color: "#fff",
-                  borderRadius: "6px",
-
-                  height: "48px",
-                  padding: "0 30px",
-                  textTransform: "none",
-                  "&:hover": {
-                    // background: 'linear-gradient(45deg, #FE8B8B 30%, #FF9E53 90%)',
-                  },
-                }}
+                className="cancelbutton"
               >
                 Cancel
               </Button>
               <Button
                 variant="contained"
                 onClick={handleNext}
-                sx={{
-                  background: "linear-gradient(180deg,#fff,#999)",
-                  border: 0,
-                  width: "fit-content",
-                  color: "black",
-                  borderRadius: "3px",
-                  height: "48px",
-                  padding: "0 30px",
-                  textTransform: "none",
-                  "&:hover": {
-                    // background: 'linear-gradient(45deg, #FE8B8B 30%, #FF9E53 90%)',
-                  },
-                }}
+                className="gradientButton"
               >
                 Upload to contract
               </Button>
@@ -182,24 +113,7 @@ const Contract = () => {
                   <label className="mb-2">Country</label>
                   <FormControl
                     fullWidth
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        height: 50,
-                        "& fieldset": {
-                          borderColor: "#ffffff3b",
-                        },
-                        "&:hover fieldset": {
-                          borderColor: "#fff",
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#2C01AA",
-                        },
-                        color: "#fff",
-                      },
-                      "& .MuiSelect-icon": {
-                        color: "#fff",
-                      },
-                    }}
+                    className="formControl"
                   >
                     <Select
                       value={selectedValue}
@@ -224,24 +138,7 @@ const Contract = () => {
                   <label className="mb-2">State</label>
                   <FormControl
                     fullWidth
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        height: 50,
-                        "& fieldset": {
-                          borderColor: "#ffffff3b",
-                        },
-                        "&:hover fieldset": {
-                          borderColor: "#fff",
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#2C01AA",
-                        },
-                        color: "#fff",
-                      },
-                      "& .MuiSelect-icon": {
-                        color: "#fff",
-                      },
-                    }}
+                    className="formControl"
                   >
                     <Select
                       value={selectedValue}
@@ -277,19 +174,7 @@ const Contract = () => {
                 <div className="col-md-12 mt-3">
                   <Button
                     variant="contained"
-                    sx={{
-                      background: "linear-gradient(180deg,#fff,#999)",
-                      border: 0,
-                      width: "100%",
-                      color: "black",
-                      borderRadius: "3px",
-                      height: "48px",
-                      padding: "0 30px",
-                      textTransform: "none",
-                      "&:hover": {
-                        // background: 'linear-gradient(45deg, #FE8B8B 30%, #FF9E53 90%)',
-                      },
-                    }}
+                    className="gradientButton w-100"
                   >
                     Create Template
                   </Button>
@@ -302,22 +187,14 @@ const Contract = () => {
             >
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <div className="d-flex align-items-center gap-2">
-                  <Button onClick={handleBack} sx={buttonStyles.circleButton}>
+                  <Button onClick={handleBack} className="circleButton">
                     <ChevronLeft size={24} />
                   </Button>
-                  <h6 className="text-white mb-0">See all contract</h6>
+                  <h6 className="text-white mb-0 text-black_light">See all contract</h6>
                 </div>
                 <Button
                   onClick={handleNext}
-                  sx={{
-                    background: "linear-gradient(180deg,#fff,#999)",
-                    border: 0,
-                    width: "fit-content",
-                    color: "black",
-                    borderRadius: "3px",
-                    padding: "10px 20px",
-                    textTransform: "none",
-                  }}
+                  className="gradientButton"
                 >
                   <NotebookTabs />
                   My contracts
@@ -335,7 +212,7 @@ const Contract = () => {
                 </p>
               </div>
               <div className="d-flex align-items-center gap-2 mb-3">
-                <Button style={buttonStyles.circleButtonWithGradient}>
+                <Button className="circleButtonWithGradient">
                   {" "}
                   <FileText color="#000" />
                 </Button>
@@ -346,24 +223,7 @@ const Contract = () => {
                   <label className="mb-2">Origin of Document</label>
                   <FormControl
                     fullWidth
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        height: 50,
-                        "& fieldset": {
-                          borderColor: "#ffffff3b",
-                        },
-                        "&:hover fieldset": {
-                          borderColor: "#fff",
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#2C01AA",
-                        },
-                        color: "#fff",
-                      },
-                      "& .MuiSelect-icon": {
-                        color: "#fff",
-                      },
-                    }}
+                    className="formControl w-100"
                   >
                     <Select
                       value={selectedValue}
@@ -388,39 +248,15 @@ const Contract = () => {
                   <div className="d-flex justify-content-end gap-4">
                     <Button
                       variant="contained"
-                      sx={{
-                        background: "transparent",
-                        border: "1px solid #8462FF",
-                        width: "fit-content",
-                        color: "#fff",
-                        borderRadius: "6px",
-
-                        height: "48px",
-                        padding: "0 30px",
-                        textTransform: "none",
-                        "&:hover": {
-                          // background: 'linear-gradient(45deg, #FE8B8B 30%, #FF9E53 90%)',
-                        },
-                      }}
+                      className="cancelbutton"
                     >
                       Save as draft
                     </Button>
                     <Button
                       variant="contained"
                       onClick={handleNext}
-                      sx={{
-                        background: "linear-gradient(180deg,#fff,#999)",
-                        border: 0,
-                        width: "fit-content",
-                        color: "black",
-                        borderRadius: "3px",
-                        height: "48px",
-                        padding: "0 30px",
-                        textTransform: "none",
-                        "&:hover": {
-                          // background: 'linear-gradient(45deg, #FE8B8B 30%, #FF9E53 90%)',
-                        },
-                      }}
+                      className="gradientButton"
+                  
                     >
                       Upload contract
                     </Button>
