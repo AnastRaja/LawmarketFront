@@ -2,6 +2,7 @@ import {Routes, Route} from "react-router";
 import {useEffect} from "react";
 import Landing from "./pages/Landing";
 import Contract from "./pages/Modules/Contract/Contract";
+import Chat from "./pages/Modules/Aichat/Chat";
 import ContractPage from "./pages/Modules/Contract/ContractPage";
 import Login from "./pages/Login";
 import "./App.css";
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/contract" element={<Contract />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/contractpage" element={<ContractPage />} />
 
         <Route path="/login" element={<Login />} />

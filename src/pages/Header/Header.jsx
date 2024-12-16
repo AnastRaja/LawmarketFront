@@ -115,7 +115,7 @@ const Header = () => {
                               Upload Contracts
                             </a>{" "}
                             <a
-                              href="#overview"
+                              href="/chat"
                               color="inherit"
                               className="contact_button"
                             >
