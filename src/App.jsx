@@ -5,6 +5,9 @@ import Contract from "./pages/Modules/Contract/Contract";
 import Chat from "./pages/Modules/Aichat/Chat";
 import ContractPage from "./pages/Modules/Contract/ContractPage";
 import Login from "./pages/Login";
+import Mediators from "./pages/Modules/mediators/Mediators";
+import Arbitrators from "./pages/Modules/arbitrators/Arbitrators";
+import LegalTemplates from "./pages/Modules/LegalTemplates/LegalTemplates";
 import "./App.css";
 
 function App() {
@@ -32,6 +35,11 @@ function App() {
         <Route path="/contract" element={<Contract />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/contractpage" element={<ContractPage />} />
+        <Route path="/mediators" element={<Mediators />} />
+        <Route path="/arbitrators" element={<Arbitrators />} />
+        <Route path="/legaltemplates" element={<LegalTemplates />} />
+
+
 
         <Route path="/login" element={<Login />} />
       </Routes>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../Contract/style"
 import BrandDark from "../../../assets/image/brand_logo.png"
+import BrandLight from "../../../assets/image/brandDark.png"
 import Header from "../../Header/Header"
 import { SendHorizontal, User  } from 'lucide-react';
 import {
@@ -22,7 +23,8 @@ const [selectedValue, setSelectedValue] = React.useState("");
   <div className="intro_chat">
       <div className="container">
       <div className="brand_name">
-      <img src={BrandDark} alt="Header" />
+      <img src={BrandDark} alt="Header" className="logo-brand"/>
+      <img src={BrandLight} alt="Header" className="logo-brand-dark"/>
       <h2>Law Blocks AI</h2>
       <p>Hello, I am an AI-powered bot that can answer your legal queries related <br/> to Indian Laws and give you answers relevant to your questions.</p>
       </div>
@@ -45,7 +47,9 @@ const [selectedValue, setSelectedValue] = React.useState("");
       </div>
       <div className="ai_message">
       <div className="aiimage">
-          <img src={BrandDark} alt="Header" />
+          <img src={BrandDark} alt="Header" className="logo-brand" />
+      <img src={BrandLight} alt="Header" className="logo-brand-dark"/>
+
         </div>
         <div className="ai_message_text">
           <p>Yes, you can make a will by filling out a will form, signing it, and submitting it to the appropriate registrar. The registrar will then review the will and issue it to you.</p>

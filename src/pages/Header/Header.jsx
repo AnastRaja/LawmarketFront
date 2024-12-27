@@ -122,7 +122,7 @@ const Header = () => {
                               AI Chat
                             </a>{" "}
                             <a
-                              href="#tutorial"
+                              href="/legaltemplates"
                               color="inherit"
                               className="contact_button"
                             >
@@ -136,14 +136,14 @@ const Header = () => {
                               Digital Signature
                             </a>
                             <a
-                              href="#tutorial"
+                              href="/arbitrators"
                               color="inherit"
                               className="contact_button"
                             >
                               Arbitrators
                             </a>
                             <a
-                              href="#tutorial"
+                              href="/mediators"
                               color="inherit"
                               className="contact_button"
                             >

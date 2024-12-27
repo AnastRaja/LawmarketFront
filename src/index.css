@@ -840,6 +840,7 @@ svg.tabler-icon.tabler-icon-moon {
   text-align: center;
   color: #fff;
   border-radius: 10px;
+  cursor: pointer;
 }
 .qastion_buttons {
   display: flex;
@@ -872,10 +873,14 @@ svg.tabler-icon.tabler-icon-moon {
   border-radius: 10px;
   border-radius: 20px;
   color: #fff;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-content: center;
 }
 .aiimage{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -889,6 +894,9 @@ svg.tabler-icon.tabler-icon-moon {
   border-radius: 10px;
   color: #fff;
   padding: 10px 10px;
+}
+.ai_message_text p {
+  margin-bottom: 0 !important;
 }
 .ai-chat{
   height: 100%;
@@ -953,9 +961,74 @@ svg.tabler-icon.tabler-icon-moon {
   filter: blur(50px);
   border-radius: 50px;
 }
+
+/* mediators page*/
+.mediators-main{
+    padding-top: 65px;
+}
+.loadmorw {
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 30px;
+  border: none;
+  margin: 40px auto;
+  display: block;
+  border: 1px solid #8462ff;
+  border-radius: 10px;
+}
+
+.mediators-main .pl-0{
+  padding-left: 0 !important;
+}
+.inputwithicon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #4e4b4b;
+  padding: 0px 6px;
+  border-radius: 5px;
+}
+.inputwithicon:hover {
+ 
+  border: 1px solid #fff;
+  
+}
+.inputwithicon input {
+  height: 50px;
+  border: none;
+  background: transparent;
+  color: #fff;
+}
+.inputwithicon svg {
+  color: #999;
+}
 /*Login Light Mode */
 .light {
   background-color: #f0efed;
+}
+.light .loadmorw {
+  color: #131313;
+ 
+}
+.light .inputwithicon svg {
+  color: #999;
+}
+.light .inputwithicon  {
+
+  border: 1px solid #b5b5b5;
+ 
+}
+.light .inputwithicon:hover  {
+
+  border: 1px solid #000;
+ 
+}
+.light .inputwithicon input {
+  height: 50px;
+  border: none;
+  background: transparent;
+  color: #000;
 }
 .light .login_content h2 {
   background: #0c0c0c;
@@ -1269,9 +1342,40 @@ svg.tabler-icon.tabler-icon-brightness-up {
 .light .card-agreement {
   color: #000;
 }
+.light .brand_name h2{
+  background: linear-gradient(to bottom, #0a0a0a 0%, #4e4e4c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.light .qastion_buttons .qastion_button_outline {
+ 
+  background: #dedede;
+  border: 1px solid #8462FF;
+
+  color: #000;
+  border-radius: 10px;
+}
+.light .ai_message_text {
+  background: #dedede;
+  color: #131313;
+}
+.light .BG_input_section {
+  background: #dedede;
+  border: 1px solid #5146e5;
+}
+.light .ai-input-flex .formControl {
+  width: auto;
+}
+.light .BG_input_section textarea {
+  color: #000;
+}
 
 /* /contract page css */
-
+.chat_history{
+  padding-bottom: 50px;
+  position: relative;
+  /* z-index: 66666; */
+}
 .container-wrapper {
   display: flex;
   width: 100%;
