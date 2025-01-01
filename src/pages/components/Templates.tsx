@@ -44,7 +44,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>California, United States</h4>
                     </div>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>Bavaria, Germany</h4>
                     </div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>Quebec, Canada</h4>
                     </div>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>Victoria, Australia</h4>
                     </div>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>Auckland, New Zealand</h4>
                     </div>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>Kyoto, Japan</h4>
                     </div>
                   </div>
                 </div>
@@ -295,7 +295,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tamil Nadu, India</h4>
+                      <h4>Andalusia, Spain</h4>
                     </div>
                   </div>
                 </div>

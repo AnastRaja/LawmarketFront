@@ -10,6 +10,7 @@ import Person7 from "../../assets/image/person7.webp";
 import Person8 from "../../assets/image/person8.webp";
 import Inputeffect from "../../assets/image/input-effect.webp";
 
+
 function Panel() {
   return (
     <div>
@@ -58,7 +59,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> United States
                   </p>
                 </div>
               </div>
@@ -77,7 +78,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Canada
                   </p>
                 </div>
               </div>
@@ -96,7 +97,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Germany
                   </p>
                 </div>
               </div>
@@ -115,7 +116,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> France
                   </p>
                 </div>
               </div>
@@ -134,7 +135,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Australia
                   </p>
                 </div>
               </div>
@@ -153,7 +154,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Brazil
                   </p>
                 </div>
               </div>
@@ -172,7 +173,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Italy
                   </p>
                 </div>
               </div>

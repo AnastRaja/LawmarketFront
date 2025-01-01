@@ -31,7 +31,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> United States
                   </p>
                 </div>
               </div>
@@ -50,7 +50,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Germany
                   </p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> New Zealand
                   </p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Spain
                   </p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Italy
                   </p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> Brazil
                   </p>
                 </div>
               </div>
@@ -164,7 +164,7 @@ function Panel() {
                     <i className="ri-auction-fill"></i> 10 Years
                   </p>
                   <p>
-                    <i className="ri-map-pin-2-line"></i> India
+                    <i className="ri-map-pin-2-line"></i> South Africa
                   </p>
                 </div>
               </div>
