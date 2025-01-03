@@ -147,11 +147,7 @@ const styles = `
   }
 }
   .light .gradientButton {
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  );
+  background: #7E8C9C !important;
   border: 0;
   width: fit-content;
   color: black;
@@ -313,8 +309,7 @@ color: #fff;
   color: #fff;
 }`;
 
-
 // Create a style element and append it to the head
-const styleElement = document.createElement('style');
+const styleElement = document.createElement("style");
 styleElement.innerHTML = styles;
 document.head.appendChild(styleElement);

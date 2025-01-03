@@ -37,7 +37,7 @@ function Panel() {
           <div className="panel-w">
             <h2>Legal panel</h2>
             <p>
-            Explore our team of experienced attorneys with expertise in various legal domains. We connect you with trusted professionals to provide reliable advice and effective solutions tailored to your needs.
+            Explore our team of experienced attorneys with expertise in various legal domains. We  connect you with trusted professionals to provide reliable advice and effective solutions tailored to your needs.
             </p>
           </div>
           <div>

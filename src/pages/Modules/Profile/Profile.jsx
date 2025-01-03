@@ -71,7 +71,7 @@ function Profile() {
             </p>
           </div>
           <div className="dateils_flex mb-2">
-            <p>Expertise: 15</p>
+            <p>Expertise: Criminal Lawyer</p>
             <p>Experience: 8 Years</p>
           </div>
           <div className="dateils_flex mb-2">

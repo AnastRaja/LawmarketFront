@@ -416,8 +416,8 @@ input:-webkit-autofill {
 }
 .panel-content p {
   color: #fff;
-  font-size: 20px;
-  max-width: 70%;
+  font-size: 18px;
+  max-width: 60%;
   text-transform: capitalize;
 }
 .panel-card {
@@ -743,7 +743,7 @@ input:-webkit-autofill {
   margin-top: 20px;
 }
 .panel-w {
-  max-width: 80%;
+  max-width: 70%;
 }
 .employ-agreement-card {
   display: flex;
@@ -1078,20 +1078,12 @@ svg.tabler-icon.tabler-icon-moon {
 }
 .light .nav-btn.login-btn {
   background: rgb(81, 70, 229);
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  );
+  background: #7e8c9c;
   color: #fff !important;
 }
 .light .create-btn {
   background: rgb(81, 70, 229);
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  );
+  background: #7e8c9c;
   color: #fff !important;
   border: none;
 }
@@ -1111,11 +1103,7 @@ ul#myTab {
 }
 .light .nav-tabs .nav-link.active {
   background: rgb(81, 70, 229);
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  ) !important;
+  background: #7e8c9c !important;
   color: #fff !important;
 }
 .light .tab_title {
@@ -1152,13 +1140,13 @@ ul#myTab {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #8462ff;
+  background: #fff;
   width: fit-content;
   padding: 20px 20px;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  border-radius: 10px 0px 0px 0px;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 10px;
 }
 .profile_balance .balanceChild {
   display: flex;
@@ -1170,7 +1158,7 @@ ul#myTab {
 }
 .profile_balance .balanceChild p {
   margin: 0;
-  color: #fff;
+  color: #131313;
   font-weight: 600;
   font-size: 17px;
 }
@@ -1234,6 +1222,7 @@ ul#myTab {
   background: #3d3d3d;
   color: #fff;
   border-radius: 9px;
+  display: none;
 }
 .profile_info {
   display: flex;
@@ -1253,14 +1242,14 @@ ul#myTab {
 }
 .button_social button {
   border: none;
-  padding: 0px 10px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
   gap: 5px;
-  background: #8462ff;
+  background: #fff;
   color: #000;
   font-weight: 500;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 .socila_wallwr p {
@@ -1362,11 +1351,7 @@ svg.tabler-icon.tabler-icon-brightness-up {
 }
 .light .panel-content .google-btn {
   background: rgb(81, 70, 229);
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  );
+  background: #7e8c9c;
   color: #fff !important;
   border-color: #8462ff;
 }
@@ -1415,11 +1400,7 @@ svg.tabler-icon.tabler-icon-brightness-up {
 .light .swiper-button-prev,
 .light .swiper-button-next {
   background: rgb(81, 70, 229);
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  );
+  background: #7e8c9c;
 }
 .light
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1i3faf7-MuiPaper-root-MuiCard-root {
@@ -1445,11 +1426,7 @@ svg.tabler-icon.tabler-icon-brightness-up {
 .light .log-btn,
 .light .copy-icons {
   background: rgb(81, 70, 229);
-  background: linear-gradient(
-    180deg,
-    rgba(81, 70, 229, 1) 50%,
-    rgba(123, 58, 237, 1) 100%
-  );
+  background: #7e8c9c;
   color: #fff;
 }
 .copy-icons img {
