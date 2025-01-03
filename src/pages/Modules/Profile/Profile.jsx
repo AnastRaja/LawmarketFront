@@ -1,11 +1,21 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import Header from "../../Header/Header";
 import XDC from "../../../assets/image/balanceXDC.png";
 import brand_logo from "../../../assets/image/balanceLBT.png";
 import profileImage from "../../../assets/image/person2.webp"; // Add your profile image
 import TemplateSlider from "../../components/Templates";
 import XIcon from "@mui/icons-material/X";
+import "../LegalTemplates/style";
 
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
+  TextField,
+} from "@mui/material";
 import {
   Pen,
   Mail,
@@ -23,14 +33,62 @@ import {
 
 function Profile() {
   const fileInputRef = useRef(null);
-
+  const [open, setOpen] = useState(false);
+  const [textValue, setTextValue] = React.useState("");
   const handleImageClick = () => {
     fileInputRef.current.click();
   };
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Header />
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Request</DialogTitle>
+        <DialogContent>
+          <div className="row">
+            <div className="col-md-12 mt-3">
+              <label className="mb-3">Subject </label>
+              <TextField
+                fullWidth
+                value={textValue}
+                onChange={(e) => setTextValue(e.target.value)}
+                placeholder="Subject"
+                className="input-styles"
+              />
+            </div>
+            <div className="col-md-12 mt-3">
+              <label className="mb-3">Message </label>
+              <TextField
+                fullWidth
+                multiline
+                rows={7}
+                value={textValue}
+                onChange={(e) => setTextValue(e.target.value)}
+                placeholder="Message"
+                className="input-styles"
+              />
+            </div>
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            variant="contained"
+            onClick={handleClose}
+            className="cancelbutton"
+          >
+            Cancel
+          </Button>
+          <Button variant="contained" className="gradientButton">
+            Send
+          </Button>
+        </DialogActions>
+      </Dialog>
       <div className="top-padding"></div>
       <div className="profile-background">
         <div className="profile_balance">
@@ -105,7 +163,7 @@ function Profile() {
             <a href="">
               <Instagram />
             </a>
-            <button>
+            <button onClick={handleClickOpen}>
               <MessageCircleMoreIcon />
               Request
             </button>
