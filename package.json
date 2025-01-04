@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
+    "@hookform/resolvers": "^3.9.1",
     "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.16.8",
     "@mui/lab": "^5.0.0-alpha.174",
@@ -24,10 +25,12 @@
     "react": "^18.3.1",
     "react-contact-number-input": "^1.1.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.1",
     "react-router-dom": "^7.0.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.15"
+    "swiper": "^11.1.15",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
