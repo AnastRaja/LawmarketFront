@@ -12,39 +12,9 @@ import { IconShoppingCartPlus } from "@tabler/icons-react";
 
 export default function TemplateSlider() {
   return (
-    <div className="relative">
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        pagination={false}
-        className="mySwiper"
-        navigation={true}
-        breakpoints={{
-          580: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          900: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          1280: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-        }}
-        modules={[Pagination, Navigation]}
-      >
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+    <div className="row">
+      <div className="col-lg-3 mb-4">
+      <div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -74,7 +44,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Toronto, Canada</h4>
+                      <h4>California, United States</h4>
                     </div>
                   </div>
                 </div>
@@ -85,9 +55,8 @@ export default function TemplateSlider() {
               </div>
             </div>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+      </div>
+      <div className="col-lg-3 mb-4"><div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -117,7 +86,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Tokyo, Japan</h4>
+                      <h4>Bavaria, Germany</h4>
                     </div>
                   </div>
                 </div>
@@ -127,10 +96,8 @@ export default function TemplateSlider() {
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+          </div></div>
+      <div className="col-lg-3 mb-4"><div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -160,7 +127,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>São Paulo, Brazil</h4>
+                      <h4>Quebec, Canada</h4>
                     </div>
                   </div>
                 </div>
@@ -170,10 +137,9 @@ export default function TemplateSlider() {
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+          </div></div>
+
+      <div className="col-lg-3 mb-4"><div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -203,7 +169,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Rome, Italy</h4>
+                      <h4>Victoria, Australia</h4>
                     </div>
                   </div>
                 </div>
@@ -213,10 +179,9 @@ export default function TemplateSlider() {
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+          </div></div>
+
+      <div className="col-lg-3 mb-4"><div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -246,7 +211,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>London, United Kingdom</h4>
+                      <h4>Auckland, New Zealand</h4>
                     </div>
                   </div>
                 </div>
@@ -256,10 +221,9 @@ export default function TemplateSlider() {
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+          </div></div>
+
+      <div className="col-lg-3 mb-4"> <div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -289,7 +253,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>Paris, France</h4>
+                      <h4>Kyoto, Japan</h4>
                     </div>
                   </div>
                 </div>
@@ -299,10 +263,9 @@ export default function TemplateSlider() {
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="employ-agreement-card">
+          </div></div>
+
+      <div className="col-lg-3 mb-4"> <div className="employ-agreement-card">
             <div className="card">
               <div className="card-head">
                 <img src={Lawdark} alt="Header" style={{ width: "150px" }} />
@@ -332,7 +295,7 @@ export default function TemplateSlider() {
                     </div>
                     <div className="price-content">
                       <p className="text-align-end">Location</p>
-                      <h4>New York, United States</h4>
+                      <h4>Andalusia, Spain</h4>
                     </div>
                   </div>
                 </div>
@@ -342,9 +305,10 @@ export default function TemplateSlider() {
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+          </div></div>
+
+      
     </div>
+   
   );
 }

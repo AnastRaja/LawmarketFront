@@ -1,4 +1,31 @@
 const styles = `
+.MuiDialog-paper {
+  background-color: #121212;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.light .MuiDialog-paper {
+  background-color: #fff;
+  color: #000;
+}
+  .MuiDialogContent{
+  padding:0;}
+.MuiDialogTitle-root {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: inherit;
+}
+.MuiDialogContent-root {
+ 
+  color: inherit;
+}
+.MuiDialogActions-root {
+
+  justify-content: flex-end;
+}
+
+
 .input-styles {
   & .MuiOutlinedInput-root {
     & fieldset {
@@ -147,7 +174,7 @@ const styles = `
   }
 }
   .light .gradientButton {
-  background: #7E8C9C !important ;
+  background: #7E8C9C !important;
   border: 0;
   width: fit-content;
   color: black;

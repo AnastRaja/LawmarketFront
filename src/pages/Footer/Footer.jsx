@@ -1,14 +1,16 @@
 import React from "react";
 import headerImage from "../../assets/image/logo.webp";
-import { Link } from "react-router-dom";
-import { IconBrandTwitterFilled } from "@tabler/icons-react";
-import { IconBrandLinkedinFilled } from "@tabler/icons-react";
-import { IconBrandTelegram } from "@tabler/icons-react";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
-import { IconBrandGmail } from "@tabler/icons-react";
-import { IconBrandGithubFilled } from "@tabler/icons-react";
-import { IconBrandReddit } from "@tabler/icons-react";
-import { IconBrandDiscord } from "@tabler/icons-react";
+import {Link} from "react-router-dom";
+import {IconBrandTwitterFilled} from "@tabler/icons-react";
+import {IconBrandLinkedinFilled} from "@tabler/icons-react";
+import {IconBrandTelegram} from "@tabler/icons-react";
+import {IconBrandYoutubeFilled} from "@tabler/icons-react";
+import {IconBrandGmail} from "@tabler/icons-react";
+import {IconBrandGithubFilled} from "@tabler/icons-react";
+import {IconBrandReddit} from "@tabler/icons-react";
+import {IconBrandDiscord} from "@tabler/icons-react";
+import XIcon from "@mui/icons-material/X";
+
 export const Footer = () => {
   return (
     <div className="container">
@@ -16,7 +18,7 @@ export const Footer = () => {
         <div className="col-lg-6">
           <div className="col-lg-8">
             <div className="footer-content">
-              <img src={headerImage} alt="Header" style={{ width: "180px" }} />
+              <img src={headerImage} alt="Header" style={{width: "180px"}} />
               <p>
                 Take the stress out of handling legal challenges with Law Blocks
                 AI. Our platform combines the power of blockchain and AI to make
@@ -100,7 +102,7 @@ export const Footer = () => {
           <li>
             {" "}
             <Link to="" className="step-text">
-              <IconBrandTwitterFilled />
+              <XIcon />
             </Link>
           </li>
           <li>
