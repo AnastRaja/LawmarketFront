@@ -7,6 +7,8 @@ import {
   IconButton,
   Drawer,
   ListItem,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {Link, useNavigate} from "react-router-dom";
@@ -15,7 +17,11 @@ import Darkheader from "../../assets/image/dark-logo.webp";
 import {IconBrightnessUp} from "@tabler/icons-react";
 import {IconMoon} from "@tabler/icons-react";
 import {IconAlignJustified} from "@tabler/icons-react";
-
+import {
+  IconShoppingCart,
+  IconFileTypeDoc,
+  IconTrash,
+} from "@tabler/icons-react";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -29,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileMenuButton: {
-    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(1),
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
@@ -69,10 +75,23 @@ const Header = () => {
     setMobileMenuOpen(true);
   };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+  const isLightMode = document.body.classList.contains("light");
+
+  // Detect screen size for responsive drawer width
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const nav_page = () => {
     navigate("/login");
   };
+  const handleCartDrawerOpen = () => {
+    setCartDrawerOpen(true);
+  };
 
+  const handleCartDrawerClose = () => {
+    setCartDrawerOpen(false);
+  };
   return (
     <>
       <main className="law_header">
@@ -154,11 +173,25 @@ const Header = () => {
                       </div>
                     </Typography>
 
+                    <div className={`menu_new_typr ${classes.appBarItems}`}>
+                      <Button className="nav-btn login-btn" onClick={nav_page}>
+                        Login
+                      </Button>
+                    </div>
+                    <IconButton
+                      color="inherit"
+                      onClick={handleCartDrawerOpen}
+                      className="cart_button"
+                    >
+                      <IconShoppingCart stroke={2} />
+                    </IconButton>
+                    <IconBrightnessUp stroke={2} onClick={handelModeClick} />
+                    <IconMoon stroke={2} onClick={handelLightMode} />
                     <IconButton
                       edge="start"
                       color="inherit"
                       aria-label="menu"
-                      className={` m-0 p-0 ${classes.mobileMenuButton} ${classes.drawerIcon}`}
+                      className={` ml-0 p-0 ${classes.mobileMenuButton} ${classes.drawerIcon}`}
                     >
                       {/* <MenuIcon onClick={handleMobileMenuOpen} className="" /> */}
                       <IconAlignJustified
@@ -172,15 +205,68 @@ const Header = () => {
                         className="dark-menu-icon"
                       />
                     </IconButton>
-                    <div className={`menu_new_typr ${classes.appBarItems}`}>
-                      <Button className="nav-btn login-btn" onClick={nav_page}>
-                        Login
-                      </Button>
-                    </div>
-                    <IconBrightnessUp stroke={2} onClick={handelModeClick} />
-                    <IconMoon stroke={2} onClick={handelLightMode} />
                   </Toolbar>
                 </AppBar>
+
+                <Drawer
+                  anchor="right"
+                  open={cartDrawerOpen}
+                  onClose={handleCartDrawerClose}
+                  className={classes.drawer}
+                >
+                  <div
+                    className={classes.mobileMenu}
+                    style={{
+                      width: isMobile ? "270px" : "400px",
+                      padding: "16px",
+                      display: "flex",
+                      flexDirection: "column",
+                      backgroundColor: isLightMode ? "#fff" : "#000",
+                      color: isLightMode ? "#000" : "#fff",
+                      height: "100vh",
+                    }}
+                  >
+                    <Typography variant="h6">Your Cart</Typography>
+                    {/* Cart items or content here */}
+                    <div className="scroll_cart">
+                      <div className="cart-item-container">
+                        <div className="cart-item">
+                          <div className="main_cart_item">
+                            <div className="cart-item-image">
+                              <IconFileTypeDoc stroke={1} size={26} />
+                            </div>
+                            <div className="cart-item-details">
+                              <p>Document Name</p>
+                              <span>000.1LBT</span>
+                            </div>
+                          </div>
+                          <Button className="cart_bin">
+                            <IconTrash size={20} />
+                          </Button>
+                        </div>
+                        <div className="cart-item">
+                          <div className="main_cart_item">
+                            <div className="cart-item-image">
+                              <IconFileTypeDoc stroke={1} size={26} />
+                            </div>
+                            <div className="cart-item-details">
+                              <p>Document Name</p>
+                              <span>000.1LBT</span>
+                            </div>
+                          </div>
+                          <Button className="cart_bin">
+                            <IconTrash size={20} />
+                          </Button>
+                        </div>
+                      </div>
+                      <div className="Cart_footer">
+                        <Button className="nav-btn login-btn padding_button">
+                          (2) Checkout
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </Drawer>
                 <Drawer
                   anchor="left"
                   open={mobileMenuOpen}
