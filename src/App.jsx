@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Mediators from "./pages/Modules/mediators/Mediators";
 import Arbitrators from "./pages/Modules/arbitrators/Arbitrators";
 import Profile from "./pages/Modules/Profile/Profile";
+import TemplateDetails from "./pages/Modules/templateDetails/templateDetails";
 
 import LegalTemplates from "./pages/Modules/LegalTemplates/LegalTemplates";
 import "./App.css";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/arbitrators" element={<Arbitrators />} />
         <Route path="/legaltemplates" element={<LegalTemplates />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/templatedetails" element={<TemplateDetails />} />
 
         <Route path="/login" element={<Login />} />
       </Routes>
