@@ -9,6 +9,7 @@ import Mediators from "./pages/Modules/mediators/Mediators";
 import Arbitrators from "./pages/Modules/arbitrators/Arbitrators";
 import Profile from "./pages/Modules/Profile/Profile";
 import TemplateDetails from "./pages/Modules/templateDetails/templateDetails";
+import CreatePage from "./pages/Modules/Create/CreatePage";
 
 import LegalTemplates from "./pages/Modules/LegalTemplates/LegalTemplates";
 import "./App.css";
@@ -43,6 +44,7 @@ function App() {
         <Route path="/legaltemplates" element={<LegalTemplates />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/templatedetails" element={<TemplateDetails />} />
+        <Route path="/create" element={<CreatePage />} />
 
         <Route path="/login" element={<Login />} />
       </Routes>
