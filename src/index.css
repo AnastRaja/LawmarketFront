@@ -1143,9 +1143,36 @@ button.cart_button {
 .buy_content > button {
   padding: 8px 50px;
 }
+.bg-transparant {
+  background: transparent !important;
+}
+.uploadbox {
+  height: 270px !important;
+  border-radius: 10px !important;
+}
+.lable_upload_file {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.lable_upload_file span {
+  color: red;
+}
+.value_note {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #999 !important;
+}
+.button.spacing {
+  padding: 0px 80px;
+  font-weight: 700;
+}
 /*Login Light Mode */
 .light {
   background-color: #f0efed;
+}
+.light .lable_upload_file {
+  color: #131313;
 }
 .light button.cart_button {
   color: #131313 !important;
