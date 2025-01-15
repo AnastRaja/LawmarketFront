@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import Mediators from "./pages/Modules/mediators/Mediators";
 import Arbitrators from "./pages/Modules/arbitrators/Arbitrators";
 import Profile from "./pages/Modules/Profile/Profile";
+import Digitaldash from "./pages/components/digitalsign/DigitalDashboard";
+import DigitalSign from "./pages/components/digitalsign/DigitalSign";
 
 import LegalTemplates from "./pages/Modules/LegalTemplates/LegalTemplates";
 import "./App.css";
@@ -41,6 +43,8 @@ function App() {
         <Route path="/arbitrators" element={<Arbitrators />} />
         <Route path="/legaltemplates" element={<LegalTemplates />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/digital_sign" element={<DigitalSign />} />
+        <Route path="/digitalDash" element={<Digitaldash />} />
 
         <Route path="/login" element={<Login />} />
       </Routes>
