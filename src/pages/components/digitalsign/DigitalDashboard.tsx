@@ -6,7 +6,7 @@ import Headers from "../../Header/Header";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { toast } from "react-toastify";
-
+import effectImage from "../../../assets/image//landing-effect1.webp";
 function Home() {
   const navigate = useNavigate();
   // const apiurl = "http://localhost:5001/";
@@ -85,9 +85,9 @@ function Home() {
     <>
       <Headers />
       <section className="relative overflow-hidden">
-        <picture className="pointer-events-none absolute inset-0 -z-10 h-20">
+        <picture className="pointer-events-none absolute inset-0 -z-10 h-20 lightmode_call">
           <img
-            // src={require("../../img/newbannar/newbannar/banner_bg.png")}
+            src={effectImage}
             alt="gradient"
             className="w-full"
           />
@@ -95,9 +95,9 @@ function Home() {
         <div className="container pt-20">
           <section className="relative pt-16 pb-8">
             <div className="container">
-              <div className="flex flex-wrap">
-                <div className="w-full lg:w-1/3 flex flex-col justify-end">
-                  <h1 className="text-left font-display text-4xl font-medium text-jacarta-700 dark:text-white">
+              <div className="flex flex-wrap row">
+                <div className=" lg:w-1/3 flex flex-col justify-end col-lg-4">
+                  <h1 className="ttext_color_FF">
                     Welcome
                   </h1>
                   <div className="profile-container mt-4 flex items-center">
@@ -106,10 +106,10 @@ function Home() {
                     </div>
                     <div className="profile-details ml-4">
                       <div className="name text-lg font-medium text-jacarta-700 dark:text-white">
-                        {userDetails.fullName}
+                       Username
                       </div>
                       <div className="text-sm dark:text-jacarta-300">
-                        {userDetails.email}
+                       user@gmail.com
                       </div>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ function Home() {
                         className="w-40 h-20 border"
                       />
                     ) : (
-                      <div className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition">
+                      <div className="button_radous">
                         <button onClick={() => setIsModalOpen(true)}>
                           Save your Signature
                         </button>
@@ -129,8 +129,8 @@ function Home() {
                     )}
                   </div>
                 </div>
-                <div className="w-full lg:w-2/3">
-                  <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+                <div className=" lg:w-2/3 col-lg-8">
+                  <div className="border_color_count">
                     <button
                       onClick={() => Navigate("/Digitaldetails")}
                       className="block text-center"
@@ -173,24 +173,20 @@ function Home() {
       </section>
       <section className="py-10">
         <div className="container">
-          <h2 className="text-left text-white text-3xl font-semibold mb-8">
+          <h2 className="text-left text-white text-3xl font-semibold mb-8 text_light">
             Get Started
           </h2>
-          <div className="bg-[#0D0B35] min-h-screen flex items-center justify-center w-full">
-            <div className="w-full bg-[#10153D] p-8 rounded-lg border-dashed border-2 border-gray-600 upload_section_code">
-              <div className="flex flex-col items-center justify-center text-center">
-                <h3 className="text-left text-white text-2xl font-semibold mb-3">
-                  Sign Your Document
-                </h3>
-                <button
-                  onClick={() => Navigate("/digital_sign")}
-                  className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#6c41d6] transition"
-                >
-                  Start Now
-                </button>
-              </div>
-            </div>
-          </div>
+          <div className="main-container">
+  <div className="card-box">
+    <div className="card-content">
+      <h3 className="card-title text_light">Sign Your Document</h3>
+      <button onClick={() => Navigate("/digital_sign")} className="action-button">
+        Start Now
+      </button>
+    </div>
+  </div>
+</div>
+
         </div>
       </section>
 

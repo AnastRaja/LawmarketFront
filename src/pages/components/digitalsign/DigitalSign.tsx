@@ -502,53 +502,48 @@ function NewLayout() {
 
       {file == false ? (
         <>
-          <section className="py-10 pt-20">
+          <section className="py-10 pt-20 comtaimer_he100vh">
             <div className="container">
-              <div className="flex flex-wrap">
-                <div className="w-full lg:w-1/2 p-4">
+              <div className="flex flex-wrap row">
+                <div className="col-lg-6 p-4">
                   <div className="bg-[#0D0B35] min-h-screen flex items-start justify-center w-full flex-col justify-start items-start">
-                    <h2 className="text-left text-white text-3xl font-semibold mb-8">
+                    <h2 className="text-left text-white text-3xl font-semibold mb-8 text_light">
                       Add Documents
                     </h2>
-                    <div className="flex items-center justify-center min-h-screen bg-[#0D0B35]">
-                      <label
-                        htmlFor="file-upload"
-                        className="w-full bg-[#10153D] p-12 rounded-lg border-dashed border-2 border-gray-600 cursor-pointer flex flex-col items-center justify-center text-center upload_section_code"
-                      >
-                        {Fileref.current == "" ? (
-                          <>
-                            <i className="ri-upload-cloud-line text-white text-4xl mb-4"></i>
-                            <span className="text-white text-lg font-medium">
-                              Upload Document
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <i
-                              class="fa fa-file-pdf-o"
-                              style={{ fontSize: "200px" }}
-                              aria-hidden="true"
-                            ></i>
-                            <span className="text-white text-lg font-medium" >File selected successfully</span>
-                          </>
-                        )}
-                        <input
-                          id="file-upload"
-                          type="file"
-                          className="hidden"
-                          onChange={handleFileChange}
-                        />
-                      </label>
-                    </div>
+                    <div className="page-container">
+  <label
+    htmlFor="file-upload"
+    className="upload-container"
+  >
+    {Fileref.current === "" ? (
+      <>
+        <i className="ri-upload-cloud-line text-white text-4xl mb-4 text_light"></i>
+        <span className="upload-text text_light">Upload Document</span>
+      </>
+    ) : (
+      <>
+        <i className="file-icon"></i>
+        <span className="file-text text_light">File selected successfully</span>
+      </>
+    )}
+    <input
+      id="file-upload"
+      type="file"
+      className="file-input"
+      onChange={handleFileChange}
+    />
+  </label>
+</div>
+
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 p-4">
-                  <h2 className="text-left text-white text-3xl font-semibold mb-8">
+                <div className="col-lg-6  p-4">
+                  <h2 className="text-left text-white text-3xl font-semibold mb-8 text_light">
                     Add Recipients
                   </h2>
-                  <div className="min-h-screen flex items-center justify-center">
-                    <div className="dark:bg-jacarta-700 w-full rounded-xl p-8 py-10 space-y-6">
-                      <div className="flex items-center space-x-3">
+                  <div className="min-h-screen flex items-center justify-center card_padding_s">
+                    <div className="dark:bg-jacarta-700 w-full rounded-xl p-8  space-y-6">
+                      <div className="flex items-center space-x-3 flex_gap">
                         <input
                           type="checkbox"
                           id="only-signer"
@@ -557,7 +552,7 @@ function NewLayout() {
                         />
                         <label
                           htmlFor="only-signer"
-                          className="text-white text-lg font-medium"
+                          className="text-white text-lg font-medium text_light"
                         >
                           I am the only signer
                         </label>
@@ -619,7 +614,7 @@ function NewLayout() {
               </div>
             </div>
           </section>
-          <footer className="fixed bottom-0 left-0 w-full dark:bg-jacarta-700 p-4">
+          <footer className="fixed bottom-0 left-0 w-full dark:bg-jacarta-700 p-4 fixedFooter">
             {checkedref.current == true ? (
               <div className="container-lg mx-auto flex justify-end gap_cls">
                 <button
@@ -652,7 +647,7 @@ function NewLayout() {
               >
               </div>
             </main>
-            <footer className="fixed bottom-0 left-0 w-full dark:bg-jacarta-700 p-4 footer_respon">
+            <footer className="fixed bottom-0 left-0 w-full dark:bg-jacarta-700 p-4 footer_respon fixedFooter">
               <div className="container-lg mx-auto flex justify-end gap_cls">
                 
                 <button
@@ -717,39 +712,33 @@ function NewLayout() {
 
                   <div className="modal-body p-6 text-center">
 
-                    <div className="flex items-center justify-center min-h-screen bg-[#0D0B35]">
-                      {signImg == false ?
-                        <label
-                          htmlFor="file-upload"
-                          className="w-full bg-[#10153D] p-12 rounded-lg border-dashed border-2 border-gray-600 cursor-pointer flex flex-col items-center justify-center text-center module_filw"
-                        >
-                          <i className="ri-upload-cloud-line text-white text-4xl mb-4"></i>
-                          <span
-                            className="text-white text-lg font-medium"
-                            onClick={() => fileInputRef.current.click()}
-                          >
-                            Upload Signature
-                          </span>
-                          <input
-                            id="file-upload"
-                            onChange={handleUploadSignature}
-                            type="file"
-                            className="hidden"
-                          />
-                        </label> : <label
-                          htmlFor="file-upload"
-                          className="w-full bg-[#10153D] p-12 rounded-lg border-dashed border-2 border-gray-600 cursor-pointer flex flex-col items-center justify-center text-center module_filw"
-                        >
-                          <span
-                            className="text-white text-lg font-medium"
-                          >
-                            Sign uploaded successfully
-                          </span>
-                        </label>}
-                    </div>
+                  <div className="page-container">
+  {signImg === false ? (
+    <label htmlFor="file-upload" className="upload-container">
+      <i className="upload-icon"></i>
+      <span
+        className="upload-text"
+        onClick={() => fileInputRef.current.click()}
+      >
+        Upload Signature
+      </span>
+      <input
+        id="file-upload"
+        onChange={handleUploadSignature}
+        type="file"
+        className="file-input"
+      />
+    </label>
+  ) : (
+    <label htmlFor="file-upload" className="upload-container">
+      <span className="success-text">Sign uploaded successfully</span>
+    </label>
+  )}
+</div>
+
                   </div>
 
-                  <div className="modal-footer flex items-end justify-end py-10 model_padding">
+                  <div className="modal-footer flex items-end justify-end  model_padding">
                     <div className="flex items-end justify-end space-x-4 flex_end_sner">
                       <button
                         onClick={saveUploadedSignature}
@@ -808,7 +797,7 @@ function NewLayout() {
                       }}
                     />
                   </div>
-                  <div className="modal-footer flex items-end justify-end py-10 model_padding">
+                  <div className="modal-footer flex items-end justify-end  model_padding">
                     <div className="flex items-end justify-end space-x-4 flex_end_sner">
                       <button
                         onClick={clearSignature}
@@ -892,7 +881,7 @@ function NewLayout() {
                       </select>
                     </div>
                   </div>
-                  <div className="modal-footer flex items-end justify-end py-10 model_padding">
+                  <div className="modal-footer flex items-end justify-end model_padding">
                     <div className="flex items-end justify-end space-x-4 flex_end_sner">
                       <button
                         onClick={addText}

@@ -13,7 +13,7 @@ function DesktopSidebar() {
     localStorage.setItem('currpage', valueref.current == null ? 1 : valueref.current)
   }
   return (
-    <aside className="width_60 dark:bg-jacarta-700 fixed left-0 top-0 h-full flex flex-col py-8 px-4 space-y-8">
+    <aside className="width_60 sidebare_fixed dark:bg-jacarta-700 fixed left-0 top-0 h-full flex flex-col py-8 px-4 space-y-8">
       <h2 className="mb-6 text-left font-display text-2xl font-medium text-jacarta-700 dark:text-white mb-8">
         Choose Sign Options
       </h2>
