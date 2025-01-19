@@ -57,6 +57,56 @@
   font-style: italic;
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ====================Digital Sign================ */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+.profile-avatar {
+  background-color: #fff;
+  color: #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.profile-details {
+  color: white;
+}
+
+.profile-details .name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-details .email {
+  font-size: 14px;
+  color: #b0afc8;.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+/* ================================================ */
 button {
   font-family: "Roboto", serif !important;
 }
