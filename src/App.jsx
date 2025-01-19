@@ -44,7 +44,7 @@ function App() {
         <Route path="/legaltemplates" element={<LegalTemplates />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/templatedetails" element={<TemplateDetails />} />
-        <Route path="/create" element={<CreatePage />} />
+        <Route path="/createpage" element={<CreatePage />} />
 
         <Route path="/login" element={<Login />} />
       </Routes>
