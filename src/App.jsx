@@ -8,13 +8,10 @@ import Login from "./pages/Login";
 import Mediators from "./pages/Modules/mediators/Mediators";
 import Arbitrators from "./pages/Modules/arbitrators/Arbitrators";
 import Profile from "./pages/Modules/Profile/Profile";
-<<<<<<< HEAD
 import TemplateDetails from "./pages/Modules/templateDetails/templateDetails";
 import CreatePage from "./pages/Modules/Create/CreatePage";
-=======
 import Digitaldash from "./pages/components/digitalsign/DigitalDashboard";
 import DigitalSign from "./pages/components/digitalsign/DigitalSign";
->>>>>>> 1e1fe493af953d2b9ec6f3da671c8368badb92e6
 
 import LegalTemplates from "./pages/Modules/LegalTemplates/LegalTemplates";
 import "./App.css";
@@ -48,13 +45,10 @@ function App() {
         <Route path="/arbitrators" element={<Arbitrators />} />
         <Route path="/legaltemplates" element={<LegalTemplates />} />
         <Route path="/profile" element={<Profile />} />
-<<<<<<< HEAD
         <Route path="/templatedetails" element={<TemplateDetails />} />
         <Route path="/createpage" element={<CreatePage />} />
-=======
         <Route path="/digital_sign" element={<DigitalSign />} />
         <Route path="/digitalDash" element={<Digitaldash />} />
->>>>>>> 1e1fe493af953d2b9ec6f3da671c8368badb92e6
 
         <Route path="/login" element={<Login />} />
       </Routes>
