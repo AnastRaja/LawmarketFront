@@ -10,7 +10,6 @@ import Person7 from "../../assets/image/person7.webp";
 import Person8 from "../../assets/image/person8.webp";
 import Inputeffect from "../../assets/image/input-effect.webp";
 
-
 function Panel() {
   return (
     <div>
@@ -33,16 +32,15 @@ function Panel() {
             <img src={Inputeffect} alt="effect" />
           </div>
         </div>
-        <div className="panel-content panel-content1">
+        <div className="panel-content panel-content1 d-flex justify-content-center">
           <div className="panel-w">
-            <h2>Legal panel</h2>
-            <p>
-            Explore our team of experienced attorneys with expertise in various legal domains. We  connect you with trusted professionals to provide reliable advice and effective solutions tailored to your needs.
+            <h2 className="text-center">Legal panel</h2>
+            <p className="text-center w-100 mx-auto">
+              Explore our team of experienced attorneys with expertise in
+              various legal domains. We connect you with trusted professionals
+              to provide reliable advice and effective solutions tailored to
+              your needs.
             </p>
-          </div>
-          <div>
-            {" "}
-            <button className="google-btn">View more</button>
           </div>
         </div>
         <div className="row">
@@ -197,6 +195,9 @@ function Panel() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="col-lg-12 d-flex justify-content-center">
+            <button className="google-btn fkex_buttn">View more</button>
           </div>
         </div>
       </div>

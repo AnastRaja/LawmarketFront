@@ -97,11 +97,12 @@
 
 .profile-details .email {
   font-size: 14px;
-  color: #b0afc8;.profile-container {
-  display: flex;
-  align-items: center;
-  padding: 10px 0px;
-}
+  color: #b0afc8;
+  .profile-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+  }
 }
 .profile-container {
   display: flex;
@@ -595,6 +596,10 @@ input:-webkit-autofill {
   font-size: 18px;
   font-weight: 500;
   margin-top: 20px;
+  text-align: justify;
+}
+.fkex_buttn {
+  margin-top: 80px !important;
 }
 .step-text {
   text-decoration: none;
@@ -1537,6 +1542,10 @@ filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(268deg) brightness(105%
 .attorney-name h4 {
   color: #999;
   margin: 0;
+}
+.fade:not(.show) {
+  opacity: 0;
+  display: none !important;
 }
 .buy_content {
   display: flex;
