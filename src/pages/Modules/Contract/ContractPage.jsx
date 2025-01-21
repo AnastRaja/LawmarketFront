@@ -4,7 +4,7 @@ import {FileText, NotebookTabs, ChevronLeft} from "lucide-react";
 import Header from "../../Header/Header";
 import CustomTable from "./Components/CustomTable";
 import {useNavigate} from "react-router";
-import './style';
+import "./style";
 // import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import {
   FormControl,
@@ -27,7 +27,6 @@ const Contract = () => {
     }
   };
 
-  
   const tableData = Array.from({length: 25}, (_, index) => ({
     id: index + 1,
     draftName: `Draft Template ${index + 1}`,
@@ -63,11 +62,9 @@ const Contract = () => {
       <Header />
       <div className="container-wrapper">
         <div className="child-container position-relative scroll_autin">
-          <div
-            className="upload_border"
-          >
+          <div className="upload_border">
             {/* <CloudUploadIcon sx={{ fontSize: 40, color: '#fff' }} /> */}
-            <FileText size={40} color="#fff" className="icon_color"/>
+            <FileText size={40} color="#fff" className="icon_color" />
             <Typography className="icon_color">
               Generate template to see preview
             </Typography>
@@ -111,10 +108,7 @@ const Contract = () => {
               <div className="row">
                 <div className="col-md-6">
                   <label className="mb-2">Country</label>
-                  <FormControl
-                    fullWidth
-                    className="formControl"
-                  >
+                  <FormControl fullWidth className="formControl">
                     <Select
                       value={selectedValue}
                       onChange={(e) => setSelectedValue(e.target.value)}
@@ -136,10 +130,7 @@ const Contract = () => {
                 </div>
                 <div className="col-md-6">
                   <label className="mb-2">State</label>
-                  <FormControl
-                    fullWidth
-                    className="formControl"
-                  >
+                  <FormControl fullWidth className="formControl">
                     <Select
                       value={selectedValue}
                       onChange={(e) => setSelectedValue(e.target.value)}
@@ -168,14 +159,11 @@ const Contract = () => {
                     value={textValue}
                     onChange={(e) => setTextValue(e.target.value)}
                     placeholder="EX: Criminal Lawyer"
-                   className="input-styles"
+                    className="input-styles"
                   />
                 </div>
                 <div className="col-md-12 mt-3">
-                  <Button
-                    variant="contained"
-                    className="gradientButton w-100"
-                  >
+                  <Button variant="contained" className="gradientButton w-100">
                     Create Template
                   </Button>
                 </div>
@@ -190,12 +178,11 @@ const Contract = () => {
                   <Button onClick={handleBack} className="circleButton">
                     <ChevronLeft size={24} />
                   </Button>
-                  <h6 className="text-white mb-0 text-black_light">See all contract</h6>
+                  <h6 className="text-white mb-0 text-black_light">
+                    See all contract
+                  </h6>
                 </div>
-                <Button
-                  onClick={handleNext}
-                  className="gradientButton"
-                >
+                <Button onClick={handleNext} className="gradientButton">
                   <NotebookTabs />
                   My contracts
                 </Button>
@@ -221,10 +208,7 @@ const Contract = () => {
               <div className="row">
                 <div className="col-md-6">
                   <label className="mb-2">Origin of Document</label>
-                  <FormControl
-                    fullWidth
-                    className="formControl w-100"
-                  >
+                  <FormControl fullWidth className="formControl w-100">
                     <Select
                       value={selectedValue}
                       onChange={(e) => setSelectedValue(e.target.value)}
@@ -246,17 +230,13 @@ const Contract = () => {
                 </div>
                 <div className="col-md-6 d-flex justify-content-end align-items-end">
                   <div className="d-flex justify-content-end gap-4">
-                    <Button
-                      variant="contained"
-                      className="cancelbutton"
-                    >
+                    <Button variant="contained" className="cancelbutton">
                       Save as draft
                     </Button>
                     <Button
                       variant="contained"
                       onClick={handleNext}
                       className="gradientButton"
-                  
                     >
                       Upload contract
                     </Button>

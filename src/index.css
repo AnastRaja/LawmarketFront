@@ -1489,7 +1489,94 @@ filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(268deg) brightness(105%
   gap: 20px;
 }
 .modal-header{
-  border-bottom: 0px solid #ccc;
+  border-bottom: 0px solid #ccc;}
+.height_100vh {
+  height: 100vh;
+}
+.padding_card_tob {
+  padding: 50px 0px;
+}
+.height_100 {
+  height: 100%;
+}
+.padding_development {
+  padding: 50px 50px;
+}
+.details_content .Titel {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+.details_content .tags {
+  list-style: none;
+  padding: 0;
+  margin-top: 17px;
+}
+.details_content .tags li {
+  width: fit-content;
+  padding: 7px 18px;
+  background: #222327;
+  color: #fff;
+  border-radius: 7px;
+  border: 1px solid #3f51b5;
+}
+.details_content .Description {
+  font-size: 18px;
+  color: #999;
+}
+.attorney-name {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  margin-top: 10px;
+}
+.attorney-name p {
+  margin: 0;
+}
+.attorney-name h4 {
+  color: #999;
+  margin: 0;
+}
+.buy_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+.buy_content img {
+  width: 31px;
+}
+.buy_content p {
+  margin: 0;
+  font-size: 22px;
+}
+.buy_content > button {
+  padding: 8px 50px;
+}
+.bg-transparant {
+  background: transparent !important;
+}
+.uploadbox {
+  height: 270px !important;
+  border-radius: 10px !important;
+}
+.lable_upload_file {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.lable_upload_file span {
+  color: red;
+}
+.value_note {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #999 !important;
+}
+.button.spacing {
+  padding: 0px 80px;
+  font-weight: 700;
 }
 /*Login Light Mode */
 
@@ -1551,6 +1638,9 @@ background-color: #f4f4f4 !important;
  
   background-color: #e3e3e3 !important;
   color: #000 !important;
+}
+.light .lable_upload_file {
+  color: #131313;
 }
 .light button.cart_button {
   color: #131313 !important;
