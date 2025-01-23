@@ -1647,6 +1647,14 @@ background-color: #f4f4f4 !important;
  
   background-color: #e3e3e3 !important;
   color: #000 !important;
+.tableRow > td {
+  color: #fff !important;
+}
+.tableRow .circleButtonWithGradientTable {
+  color: #fff !important;
+}
+.light .tableRow > td {
+  color: #131313 !important;
 }
 .light .lable_upload_file {
   color: #131313;
