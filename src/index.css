@@ -1230,6 +1230,15 @@ button.cart_button {
 .light {
   background-color: #f0efed;
 }
+.tableRow > td {
+  color: #fff !important;
+}
+.tableRow .circleButtonWithGradientTable {
+  color: #fff !important;
+}
+.light .tableRow > td {
+  color: #131313 !important;
+}
 .light .lable_upload_file {
   color: #131313;
 }
