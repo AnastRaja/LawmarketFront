@@ -1,90 +1,62 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { PhoneInput } from "react-contact-number-input";
-import { FormProvider, useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { FormProvider, useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const userSchema = z.object({
+  firstName: z.string().min(1, "First Name is required"),
+  lastName: z.string().min(1, "Last Name is required"),
+  email: z.string().email("Invalid email address"),
+  role: z.string().min(1,"Role is required"), // Only for Attorney tab
+  password: z
+    .string()
+    .min(8, "Password must be at least 8 characters")
+    .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+    .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+    .regex(/[0-9]/, "Password must contain at least one number")
+    .regex(/[^A-Za-z0-9]/, "Password must contain at least one special character"),
+  confirmPassword: z.string().min(1, "Please confirm your password"),
+  startedYear: z.string().min(1, "Started year is required"),
+  // startedYear: z.string().optional(), // Only for Attorney tab
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords must match",
+  path: ["confirmPassword"],
+});
 
 export default function LabTabs() {
-  const [value, setValue] = React.useState("1");
+  const [activeTab, setActiveTab] = React.useState("attorney");
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+  const methods = useForm({
+    resolver: zodResolver(userSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      role: "",
+      password: "",
+      confirmPassword: "",
+      phoneNumber: "",
+      startedYear: "",
+    },
+  });
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    methods.reset();
   };
+
   const handleOnChange = (type) => {
     var number = type.countryCode + " " + type.phoneNumber;
+    // setmobileInput(number);
+    // setnumberErr(type.message);
   };
 
-  const productIdentityFormSchema = z.object({
-    product_name: z
-      .string()
-      .min(1, { message: 'Please enter your product name' }),
-    product_category_id: z.string().min(1, {
-      message: 'Please select category',
-    }),
-    variations: z.boolean().optional(),
-
-    brand_name: z.string(),
-    description: z
-      .string()
-      .min(4, { message: 'Description should be minimum of 4 characters' }),
-    bullet_points: z.string().min(1, { message: 'Please enter Bullet_points' }),
-  })
-
-  const productIdentityForm = useForm<
-    z.infer<typeof productIdentityFormSchema>
-  >({
-    resolver: zodResolver(productIdentityFormSchema),
-    defaultValues: {
-      product_name: '',
-      product_category_id: '',
-      brand_name: '',
-      description: '',
-      bullet_points: '',
-    },
-  })
-
-  const onProductIdentitySubmit = async (values: any) => {
-    if (file == null) {
-      toast({
-        className: cn(
-          'top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4'
-        ),
-        title: 'Failed',
-        description: <h3>Please upload the Product Image!</h3>,
-      })
-
-      return
-    }
-
-    if (file) {
-      setApiLoading(true)
-      let data = new FormData()
-
-      data.append('file', file)
-
-      try {
-        let resData = await uploadImage(data)
-
-        setImageUrl(resData.url)
-        console.log({ resData })
-      } catch {
-        toast({
-          className: cn(
-            'top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4'
-          ),
-          title: 'Failed',
-          description: <h3>Please upload the Product Image!</h3>,
-        })
-        return
-      } finally {
-        setApiLoading(false)
-      }
-    }
-    console.log(values)
-    setProductIdentityData(values)
-    setTab('details')
-  }
+  const onSubmit = (data: any) => {
+    console.log("Form submitted: ", data);
+    alert("Form submitted successfully!");
+  };
 
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
@@ -92,239 +64,156 @@ export default function LabTabs() {
         <ul className="nav nav-tabs tab_title" id="myTab" role="tablist">
           <li className="nav-item" role="presentation">
             <button
-              className="nav-link active"
-              id="home-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#home-tab-pane"
+              className={`nav-link ${activeTab === "attorney" ? "active" : ""}`}
               type="button"
-              role="tab"
-              aria-controls="home-tab-pane"
-              aria-selected="true"
+              onClick={() => handleTabChange("attorney")}
             >
               Attorney
             </button>
           </li>
           <li className="nav-item" role="presentation">
             <button
-              className="nav-link"
-              id="profile-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#profile-tab-pane"
+              className={`nav-link ${activeTab === "user" ? "active" : ""}`}
               type="button"
-              role="tab"
-              aria-controls="profile-tab-pane"
-              aria-selected="false"
+              onClick={() => handleTabChange("user")}
             >
               User
             </button>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">
-          <FormProvider {...productIdentityForm}>
-            <form
-              onSubmit={productIdentityForm.handleSubmit(onProductIdentitySubmit)}
-            >
+          <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(onSubmit)}>
               <div
-                className="tab-pane fade show active"
-                id="home-tab-pane"
-                role="tabpanel"
-                aria-labelledby="home-tab"
-                tabindex="0"
+                className={`tab-pane fade ${activeTab === "attorney" ? "show active" : ""
+                  }`}
               >
-                <div className="attorney-tab">
-                  <div className="lable-content mt-4">
-                    <div className="lable-text">
-                      <label htmlFor="">First Name</label>
-                      <input type="text" placeholder="Enter First Name" />
-                    </div>
-                    <div className="lable-text">
-                      <label htmlFor="">Last Name</label>
-                      <input type="text" placeholder="Enter Last Name" />
-                    </div>
-                  </div>
-                  <div className="lable-text mt-3">
-                    <label htmlFor="">Email </label>
-                    <input type="email" placeholder="Enter Your Email" />
-                  </div>
-                  <div className="lable-text mt-3">
-                    <label htmlFor="">Role </label>
-                    <input type="text" placeholder="EX: Criminal Lawyer" />
-                  </div>
-                  <div className="lable-pass mt-3">
-                    <div>
-                      <label htmlFor="">Enter Password </label>
-                    </div>
-                    <div className="lable-text-input">
-                      <div className="bg-trans">
-                        {" "}
-                        <input type="password" placeholder="Enter Password" />
+                {activeTab === "attorney" && (
+                  <div className="attorney-tab">
+                    <div className="lable-content mt-4">
+                      <div className="lable-text">
+                        <label>First Name</label>
+                        <input
+                          {...methods.register("firstName")}
+                          type="text"
+                          placeholder="Enter First Name"
+                        />
+                        <p className="color">{methods.formState.errors.firstName?.message}</p>
                       </div>
-                      <div>
-                        {" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-eye"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                          <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
-                        </svg>
+                      <div className="lable-text">
+                        <label>Last Name</label>
+                        <input
+                          {...methods.register("lastName")}
+                          type="text"
+                          placeholder="Enter Last Name"
+                        />
+                        <p className="color">{methods.formState.errors.lastName?.message}</p>
                       </div>
                     </div>
-                  </div>
-                  <div className="lable-pass mt-3">
-                    <div>
-                      <label htmlFor="">Enter Confirm Password</label>
-                    </div>
-                    <div className="lable-text-input">
-                      <div className="bg-trans">
-                        {" "}
-                        <input type="password" placeholder="Enter Password" />
-                      </div>
-                      <div>
-                        {" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-eye"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                          <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="lable-content mt-3">
-                    <div className="lable-text">
-                      <label htmlFor="" className="mb-2">
-                        Mobile Number
-                      </label>
-                      <PhoneInput
-                        class="mobileInput"
-                        placeholder="Enter your phone number"
-                        onChange={handleOnChange}
+                    <div className="lable-text mt-3">
+                      <label>Email</label>
+                      <input
+                        {...methods.register("email")}
+                        type="email"
+                        placeholder="Enter Your Email"
                       />
+                      <p className="color">{methods.formState.errors.email?.message}</p>
                     </div>
-                    <div className="lable-text">
-                      <label htmlFor="">Started Year</label>
-                      <input type="text" placeholder="Enter Started Year  " />
+                    <div className="lable-text mt-3">
+                      <label>Role</label>
+                      <input
+                        {...methods.register("role")}
+                        type="text"
+                        placeholder="EX: Criminal Lawyer"
+                      />
+                        <p className="color">{methods.formState.errors.role?.message}</p>
+                    </div>
+                    <PasswordFields methods={methods} />
+                    <div className="lable-content mt-3">
+                      <div className="lable-text">
+                        <label>Mobile Number</label>
+                        <PhoneInput
+                          className="mobileInput"
+                          {...methods.register("phoneNumber")}
+                          placeholder="Enter your phone number"
+                          onChange={handleOnChange}
+                        />
+                        <p className="color">{methods.formState.errors.phoneNumber?.message}</p>
+                      </div>
+                      <div className="lable-text">
+                        <label>Started Year</label>
+                        <input
+                          {...methods.register("startedYear")}
+                          type="number"
+                          placeholder="Enter Started Year"
+                          min={0}
+                        />
+                      <p className="color">{methods.formState.errors.startedYear?.message}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <button type="submit" className="create-btn mt-3">
+                        Create account
+                      </button>
                     </div>
                   </div>
-                  <div>
-                    <button className="create-btn mt-3">Create account</button>
-                  </div>
-                </div>
+                )}
               </div>
               <div
-                className="tab-pane fade"
-                id="profile-tab-pane"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-                tabindex="0"
+                className={`tab-pane fade ${activeTab === "user" ? "show active" : ""
+                  }`}
               >
-                <div className="user-tab">
-                  <div className="lable-content mt-4">
-                    <div className="lable-text">
-                      <label htmlFor="">First Name</label>
-                      <input type="text" placeholder="Enter First Name" />
+                {activeTab === "user" && (
+                  <div className="user-tab">
+                    <div className="lable-content mt-4">
+                      <div className="lable-text">
+                        <label>First Name</label>
+                        <input
+                          {...methods.register("firstName")}
+                          type="text"
+                          placeholder="Enter First Name"
+                        />
+                        <p className="color">{methods.formState.errors.firstName?.message}</p>
+                      </div>
+                      <div className="lable-text">
+                        <label>Last Name</label>
+                        <input
+                          {...methods.register("lastName")}
+                          type="text"
+                          placeholder="Enter Last Name"
+                        />
+                        <p className="color">{methods.formState.errors.lastName?.message}</p>
+                      </div>
                     </div>
-                    <div className="lable-text">
-                      <label htmlFor="">Last Name</label>
-                      <input type="text" placeholder="Enter Last Name" />
+                    <div className="lable-text mt-3">
+                      <label>Email</label>
+                      <input
+                        {...methods.register("email")}
+                        type="email"
+                        placeholder="Enter Your Email"
+                      />
+                      <p className="color">{methods.formState.errors.email?.message}</p>
                     </div>
-                  </div>
-                  <div className="lable-text mt-3">
-                    <label htmlFor="">Email </label>
-                    <input type="email" placeholder="Enter Your Email" />
-                  </div>
-                  <div className="lable-pass mt-3">
+                    <PasswordFields methods={methods} />
+                    <div className="lable-text mt-3">
+                      <label>Mobile Number</label>
+                      <PhoneInput
+                        className="mobileInput"
+                        {...methods.register("phoneNumber")}
+                        placeholder="Enter your phone number"
+                        // onChange={(value) =>
+                        //   methods.setValue("phoneNumber", value)
+                        // }
+                      />
+                      <p className="color">{methods.formState.errors.phoneNumber?.message}</p>
+                    </div>
                     <div>
-                      <label htmlFor="">Enter Password </label>
-                    </div>
-                    <div className="lable-text-input">
-                      <div className="bg-trans">
-                        {" "}
-                        <input type="password" placeholder="Enter Password" />
-                      </div>
-                      <div>
-                        {" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-eye"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                          <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
-                        </svg>
-                      </div>
+                      <button type="submit" className="create-btn mt-3">
+                        Create account
+                      </button>
                     </div>
                   </div>
-                  <div className="lable-pass mt-3">
-                    <div>
-                      <label htmlFor="">Enter Confirm Password</label>
-                    </div>
-                    <div className="lable-text-input">
-                      <div className="bg-trans">
-                        {" "}
-                        <input type="password" placeholder="Enter Password" />
-                      </div>
-                      <div>
-                        {" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-eye"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                          <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="lable-text mt-3">
-                    <label htmlFor="">Mobile Number</label>
-                    <PhoneInput
-                      class="mobileInput"
-                      placeholder="Enter your phone number"
-                      onChange={handleOnChange}
-                    />
-                  </div>
-                  <div>
-                    <button className="create-btn mt-3">Create account</button>
-                  </div>
-                </div>
+                )}
               </div>
             </form>
           </FormProvider>
@@ -333,3 +222,29 @@ export default function LabTabs() {
     </Box>
   );
 }
+
+const PasswordFields = ({ methods }: any) => (
+  <>
+    {/* <div className="user-tab"> */}
+      <div className="lable-text mt-3">
+        <label>Password</label>
+          <input
+            {...methods.register("password")}
+            type="password"
+            placeholder="Enter Password"
+          />
+          <p className="color">{methods.formState.errors.password?.message}</p>
+      </div>
+      <div className="lable-text mt-3">
+        <label>Confirm Password</label>
+          <input
+            {...methods.register("confirmPassword")}
+            type="password"
+            placeholder="Enter Confirm Password"
+          />
+          <p className="color">{methods.formState.errors.confirmPassword?.message}</p>
+      </div>
+    {/* </div> */}
+
+  </>
+);

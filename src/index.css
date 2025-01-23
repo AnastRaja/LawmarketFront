@@ -2147,6 +2147,9 @@ svg.tabler-icon.tabler-icon-brightness-up {
 .light .card-agreement {
   color: #000;
 }
+.color{
+ color: red;
+}
 .light .brand_name h2 {
   background: linear-gradient(to bottom, #0a0a0a 0%, #4e4e4c 100%);
   -webkit-background-clip: text;

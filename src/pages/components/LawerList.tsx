@@ -171,7 +171,7 @@ function Panel() {
             </div>
           </div>
         </div>
-        <button className="loadmorw">View All</button>
+        {/* <button className="loadmorw">View All</button> */}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Link, useNavigate} from "react-router-dom";
 import headerImage from "../../assets/image/logo.webp";
 import Darkheader from "../../assets/image/dark-logo.webp";
-import {IconBrightnessUp} from "@tabler/icons-react";
+import {IconBrandSuperhuman, IconBrightnessUp, IconPasswordUser, IconPhoto, IconProgress, IconUser} from "@tabler/icons-react";
 import {IconMoon} from "@tabler/icons-react";
 import {IconAlignJustified} from "@tabler/icons-react";
 import {
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
+
   const handelModeClick = () => {
     var body = document.body;
 
@@ -83,15 +84,21 @@ const Header = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const nav_page = () => {
-    navigate("/login");
+    navigate("/register");
   };
   const handleCartDrawerOpen = () => {
     setCartDrawerOpen(true);
   };
-
+  const handleprofile = () => {
+    navigate("/profile");
+  };
   const handleCartDrawerClose = () => {
     setCartDrawerOpen(false);
   };
+
+  const navigatebar = (value) => {
+    navigate(value)
+  }
   return (
     <>
       <main className="law_header">
@@ -119,55 +126,55 @@ const Header = () => {
                         </Link>
                         <div className={`menu_new_typr ${classes.appBarItems}`}>
                           <div className="law_nav_items">
-                            <a
-                              href="#template"
+                            <Link
+                              to="/contractpage"
                               color="inherit"
                               className="contact_button"
                             >
                               Create Document using AI
-                            </a>
-                            <a
-                              href="/contractpage"
+                            </Link>
+                            {/* <Link
+                              to="/contractpage"
                               color="inherit"
                               className="contact_button"
                             >
                               Upload Contracts
-                            </a>{" "}
-                            <a
-                              href="/chat"
+                            </Link>{" "} */}
+                            <Link
+                              to="/chat"
                               color="inherit"
                               className="contact_button"
                             >
                               AI Chat
-                            </a>{" "}
-                            <a
-                              href="/legaltemplates"
+                            </Link>{" "}
+                            <Link
+                              to="/legaltemplates"
                               color="inherit"
                               className="contact_button"
                             >
                               Legal Documents
-                            </a>
-                            <a
-                              href="#tutorial"
+                            </Link>
+                            <Link
+                              to="/digitalDash"
                               color="inherit"
                               className="contact_button"
                             >
                               Digital Signature
-                            </a>
-                            <a
-                              href="/arbitrators"
+                            </Link>
+                            <Link
+                              to="/arbitrators"
                               color="inherit"
                               className="contact_button"
                             >
-                              Arbitrators
-                            </a>
-                            <a
-                              href="/mediators"
+                              Arbitrators & Mediators
+                            </Link>
+                            {/* <Link
+                              to="/mediators"
                               color="inherit"
                               className="contact_button"
                             >
                               Mediators
-                            </a>
+                            </Link> */}
                           </div>
                         </div>
                       </div>
@@ -175,7 +182,7 @@ const Header = () => {
 
                     <div className={`menu_new_typr ${classes.appBarItems}`}>
                       <Button className="nav-btn login-btn" onClick={nav_page}>
-                        Login
+                        Register
                       </Button>
                     </div>
                     <IconButton
@@ -185,7 +192,9 @@ const Header = () => {
                     >
                       <IconShoppingCart stroke={2} />
                     </IconButton>
+                    
                     <IconBrightnessUp stroke={2} onClick={handelModeClick} />
+                    
                     <IconMoon stroke={2} onClick={handelLightMode} />
                     <IconButton
                       edge="start"
@@ -204,6 +213,13 @@ const Header = () => {
                         onClick={handleMobileMenuOpen}
                         className="dark-menu-icon"
                       />
+                    </IconButton>
+                    <IconButton
+                      color="inherit"
+                      onClick={handleprofile}
+                      className="cart_button"
+                    >
+                      <IconUser stroke={2} />
                     </IconButton>
                   </Toolbar>
                 </AppBar>
@@ -314,9 +330,9 @@ const Header = () => {
                       <ListItem button className="drawa ">
                         <Button
                           className="nav-btn login-btn"
-                          onClick={() => navigate("/login")}
+                          onClick={() => navigate("/register")}
                         >
-                          Login
+                          Register
                         </Button>
                       </ListItem>
                     </div>

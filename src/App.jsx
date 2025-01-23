@@ -50,7 +50,7 @@ function App() {
         <Route path="/digital_sign" element={<DigitalSign />} />
         <Route path="/digitalDash" element={<Digitaldash />} />
 
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Login />} />
       </Routes>
     </>
   );
