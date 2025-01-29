@@ -104,6 +104,9 @@
     padding: 10px 0px;
   }
 }
+.imgwidth{
+  width: 70%;
+}
 .profile-container {
   display: flex;
   align-items: center;
@@ -1647,10 +1650,47 @@ background-color: #f4f4f4 !important;
  
   background-color: #e3e3e3 !important;
   color: #000 !important;
+ }
+
 .tableRow > td {
   color: #fff !important;
 }
-.tableRow .circleButtonWithGradientTable {
+.tableRow .circleButtonWithGradientTableview {
+  color: blue !important;
+  background: #fff !important;
+}
+
+.tableRow .circleButtonWithGradientTableedit {
+  color: green !important;
+  background: #fff !important;
+}
+.light .tableRow .circleButtonWithGradientTableview {
+  background: #edf0f2 !important;
+  color: blue !important;
+}
+.light .tableRow .circleButtonWithGradientTableedit {
+  background: #edf0f2 !important;
+  color: green !important;
+}
+.light .tableRow .circleButtonWithGradientTableshare {
+  background: #edf0f2 !important;
+  color: gray !important;
+}
+.light .tableRow .circleButtonWithGradientTabledelete {
+  background: #edf0f2 !important;
+  color: red !important;
+}
+.tableRow .circleButtonWithGradientTableshare {
+  color: gray !important;
+  background: #fff !important;
+}
+.tableRow .circleButtonWithGradientTabledelete {
+  color: red !important;
+  background: #fff !important;
+}
+
+.deleteButton {
+  background: red !important;
   color: #fff !important;
 }
 .light .tableRow > td {

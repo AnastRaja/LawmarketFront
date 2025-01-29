@@ -54,7 +54,7 @@ const CustomTable = ({ data, onView, onEdit, onShare, onDelete }) => {
                           size="small"
                          
                           onClick={() => onView && onView(row)}
-                          className="circleButtonWithGradientTable"
+                          className="circleButtonWithGradientTableview"
                         >
                           <Eye size={16} />
                         </IconButton>
@@ -64,7 +64,7 @@ const CustomTable = ({ data, onView, onEdit, onShare, onDelete }) => {
                           size="small"
                          
                           onClick={() => onEdit && onEdit(row)}
-                          className="circleButtonWithGradientTable"
+                          className="circleButtonWithGradientTableedit"
                         >
                           <Pencil size={16} />
                         </IconButton>
@@ -74,7 +74,7 @@ const CustomTable = ({ data, onView, onEdit, onShare, onDelete }) => {
                           size="small"
                          
                           onClick={() => onShare && onShare(row)}
-                          className="circleButtonWithGradientTable"
+                          className="circleButtonWithGradientTableshare"
                         >
                           <Share2 size={16} />
                         </IconButton>
@@ -84,7 +84,7 @@ const CustomTable = ({ data, onView, onEdit, onShare, onDelete }) => {
                           size="small"
                          
                           onClick={() => onDelete && onDelete(row)}
-                          className='circleButtonWithGradientTable deleteButton'
+                          className='circleButtonWithGradientTabledelete deleteButton'
                         >
                           <Trash2 size={16} />
                         </IconButton>

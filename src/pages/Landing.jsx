@@ -34,6 +34,8 @@ import TemplateSlider from "../pages/components/slider";
 import SliderEffect from "../assets/image/slider-effect.webp";
 import Logdarkeffect from "../assets/image/log-dark-effect.webp";
 import Panel from "../pages/components/panel";
+import {  GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+
 var settings = {
   dots: false,
   infinite: true,
@@ -107,8 +109,17 @@ function Login() {
             <p className="or">OR</p>
 
             <button className="google-btn">
-              <img src={googleImage} alt="google" width={"25px"} />
-              Sign in with Google
+              {/* <img src={googleImage} alt="google" width={"25px"} /> */}
+              <GoogleLogin
+                              onSuccess={credentialResponse => {
+                                console.log(credentialResponse);
+                              }}
+                              onError={() => {
+                                console.log('Login Failed');
+                              }}
+                              // ux_mode="popup" // Try this for live environment issues
+                            />
+              {/* Sign in with Google */}
             </button>
           </div>
         </div>

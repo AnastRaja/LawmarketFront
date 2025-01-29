@@ -34,10 +34,16 @@ function App() {
     makeTheme();
   });
 
+  function RequireAuth({ children }) {
+    var data = localStorage.getItem("user_token");
+    return data ? children : removeAuthToken();
+  }
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/register" element={<Login />} />
         <Route path="/contract" element={<Contract />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/contractpage" element={<ContractPage />} />
@@ -50,7 +56,6 @@ function App() {
         <Route path="/digital_sign" element={<DigitalSign />} />
         <Route path="/digitalDash" element={<Digitaldash />} />
 
-        <Route path="/register" element={<Login />} />
       </Routes>
     </>
   );

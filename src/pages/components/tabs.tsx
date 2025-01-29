@@ -4,12 +4,18 @@ import { PhoneInput } from "react-contact-number-input";
 import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import apiService from "../../core/service/v1/index";
+import { postMethod } from "../../core/service/common.api";
+import axios from "axios";
+// import ethers from 'ethers'
+// import JsonRpcProvider from 'ethers'
+
 
 const userSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
   lastName: z.string().min(1, "Last Name is required"),
   email: z.string().email("Invalid email address"),
-  role: z.string().min(1,"Role is required"), // Only for Attorney tab
+  role: z.string().min(1, "Role is required"), // Only for Attorney tab
   password: z
     .string()
     .min(8, "Password must be at least 8 characters")
@@ -26,8 +32,11 @@ const userSchema = z.object({
 });
 
 export default function LabTabs() {
-  const [activeTab, setActiveTab] = React.useState("attorney");
 
+  const apiUrl = 'https://marketapi.lawblocks.io/'
+  const [activeTab, setActiveTab] = React.useState("attorney");
+  const [numberErr, setnumberErr] = React.useState("");
+  const [mobileInput, setmobileInput] = React.useState("");
   const methods = useForm({
     resolver: zodResolver(userSchema),
     defaultValues: {
@@ -49,12 +58,40 @@ export default function LabTabs() {
 
   const handleOnChange = (type) => {
     var number = type.countryCode + " " + type.phoneNumber;
-    // setmobileInput(number);
-    // setnumberErr(type.message);
+    setmobileInput(number);
+    setnumberErr(type.message);
   };
+  const [buttonLoader, setbuttonLoader] = React.useState(false)
+  const onSubmit = async (value: any) => {
+    console.log(value, "value")
+    if (value.role == undefined) {
+      //client
+    } else {
+      const rpcUrl = "https://erpc.xdcrpc.com";
+      // Initialize ethers provider using the RPC URL
+      // const provider = new JsonRpcProvider(rpcUrl);
+      // // Generate a new wallet
+      // const wallet = ethers.Wallet.createRandom(provider);
+      value["phoneNumber"] = mobileInput;
+      // value["address"] = wallet.address;
+      // value["chainCode"] = wallet.chainCode;
+      // value["privateKey"] = wallet.signingKey.privateKey;
+      // value["publicKey"] = wallet.publicKey;
+      // value["fingerprint"] = wallet.fingerprint;
+      console.log(value,"=-=-=value")
 
-  const onSubmit = (data: any) => {
-    console.log("Form submitted: ", data);
+      var response = await axios.post(apiUrl+'users/users/advacatesignup', value)
+      return
+      var data = {
+        apiUrl: apiService.advacateregister,
+        // payload: value,
+      };
+      setbuttonLoader(true);
+      var resp = await (data);
+      setbuttonLoader(false);
+    }
+
+    console.log("Form submitted: ", value);
     alert("Form submitted successfully!");
   };
 
@@ -126,7 +163,7 @@ export default function LabTabs() {
                         type="text"
                         placeholder="EX: Criminal Lawyer"
                       />
-                        <p className="color">{methods.formState.errors.role?.message}</p>
+                      <p className="color">{methods.formState.errors.role?.message}</p>
                     </div>
                     <PasswordFields methods={methods} />
                     <div className="lable-content mt-3">
@@ -148,7 +185,7 @@ export default function LabTabs() {
                           placeholder="Enter Started Year"
                           min={0}
                         />
-                      <p className="color">{methods.formState.errors.startedYear?.message}</p>
+                        <p className="color">{methods.formState.errors.startedYear?.message}</p>
                       </div>
                     </div>
                     <div>
@@ -201,11 +238,11 @@ export default function LabTabs() {
                         className="mobileInput"
                         {...methods.register("phoneNumber")}
                         placeholder="Enter your phone number"
-                        // onChange={(value) =>
-                        //   methods.setValue("phoneNumber", value)
-                        // }
+                      // onChange={(value) =>
+                      //   methods.setValue("phoneNumber", value)
+                      // }
                       />
-                      <p className="color">{methods.formState.errors.phoneNumber?.message}</p>
+                      <p className="color">{numberErr}</p>
                     </div>
                     <div>
                       <button type="submit" className="create-btn mt-3">
@@ -226,24 +263,24 @@ export default function LabTabs() {
 const PasswordFields = ({ methods }: any) => (
   <>
     {/* <div className="user-tab"> */}
-      <div className="lable-text mt-3">
-        <label>Password</label>
-          <input
-            {...methods.register("password")}
-            type="password"
-            placeholder="Enter Password"
-          />
-          <p className="color">{methods.formState.errors.password?.message}</p>
-      </div>
-      <div className="lable-text mt-3">
-        <label>Confirm Password</label>
-          <input
-            {...methods.register("confirmPassword")}
-            type="password"
-            placeholder="Enter Confirm Password"
-          />
-          <p className="color">{methods.formState.errors.confirmPassword?.message}</p>
-      </div>
+    <div className="lable-text mt-3">
+      <label>Password</label>
+      <input
+        {...methods.register("password")}
+        type="password"
+        placeholder="Enter Password"
+      />
+      <p className="color">{methods.formState.errors.password?.message}</p>
+    </div>
+    <div className="lable-text mt-3">
+      <label>Confirm Password</label>
+      <input
+        {...methods.register("confirmPassword")}
+        type="password"
+        placeholder="Enter Confirm Password"
+      />
+      <p className="color">{methods.formState.errors.confirmPassword?.message}</p>
+    </div>
     {/* </div> */}
 
   </>

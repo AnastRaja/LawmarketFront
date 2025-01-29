@@ -1,0 +1,514 @@
+[
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_lawblocks",
+                "type": "address"
+            }
+        ],
+        "name": "initialize",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_fee",
+                "type": "uint256"
+            }
+        ],
+        "name": "setSharingFee",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_fee",
+                "type": "uint256"
+            }
+        ],
+        "name": "setSigningFee",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_fee",
+                "type": "uint256"
+            }
+        ],
+        "name": "setTransactionFee",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_cid",
+                "type": "uint256"
+            },
+            {
+                "name": "_hashFile",
+                "type": "string"
+            },
+            {
+                "name": "sharedTo",
+                "type": "address"
+            }
+        ],
+        "name": "shareFile",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_cid",
+                "type": "uint256"
+            },
+            {
+                "name": "_hashFile",
+                "type": "string"
+            },
+            {
+                "name": "_signature",
+                "type": "string"
+            }
+        ],
+        "name": "signContract",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_newOwneraddress",
+                "type": "address"
+            }
+        ],
+        "name": "transferContractOwnership",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "newOperator_",
+                "type": "address"
+            }
+        ],
+        "name": "transferOperator",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_hashFile",
+                "type": "string"
+            },
+            {
+                "name": "_contractName",
+                "type": "string"
+            },
+            {
+                "name": "_signature",
+                "type": "string"
+            }
+        ],
+        "name": "uploadFile",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "withdrawBalance",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "contractId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "contractHash",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "name": "uploadedBy",
+                "type": "address"
+            }
+        ],
+        "name": "contractStored",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "contractId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "contractHash",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "name": "sharedBy",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "sharedTo",
+                "type": "address"
+            }
+        ],
+        "name": "contractShared",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "contractId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "contractHash",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "name": "signedBy",
+                "type": "address"
+            }
+        ],
+        "name": "contractSigned",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "previousOperator",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "name": "newOperator",
+                "type": "address"
+            }
+        ],
+        "name": "OperatorTransferred",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipRenounced",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "_contractIds",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_itemId",
+                "type": "uint256"
+            }
+        ],
+        "name": "fetchContractById",
+        "outputs": [
+            {
+                "name": "contractId",
+                "type": "uint256"
+            },
+            {
+                "name": "contractName",
+                "type": "string"
+            },
+            {
+                "name": "contractHash",
+                "type": "string"
+            },
+            {
+                "name": "stakeHolders",
+                "type": "address[]"
+            },
+            {
+                "name": "toSign",
+                "type": "address[]"
+            },
+            {
+                "name": "signature",
+                "type": "string[]"
+            },
+            {
+                "name": "uploadedBy",
+                "type": "address"
+            },
+            {
+                "name": "uploadedON",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getAllContracts",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "name": "contractId",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "contractName",
+                        "type": "string"
+                    },
+                    {
+                        "name": "contractHash",
+                        "type": "string"
+                    },
+                    {
+                        "name": "stakeHolders",
+                        "type": "address[]"
+                    },
+                    {
+                        "name": "toSign",
+                        "type": "address[]"
+                    },
+                    {
+                        "name": "signature",
+                        "type": "string[]"
+                    },
+                    {
+                        "name": "uploadedBy",
+                        "type": "address"
+                    },
+                    {
+                        "name": "uploadedON",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "isOperator",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "operator",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "sharingFee",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "signingFee",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "transactionFee",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

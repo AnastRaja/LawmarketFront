@@ -255,7 +255,8 @@ const styles = `
   }
 }
   .deleteButton {
-  background: linear-gradient(180deg, #FF5757 0%, #FF0000 100%);
+  background: linear-gradient(180deg, #FF5757 0%, #FF0000 100%) !important;
+  color: #fff !important;
   
   &:hover {
     background: linear-gradient(180deg, #FF5757 20%, #FF0000 120%);
